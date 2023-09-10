@@ -8,5 +8,6 @@ print("Done! Rebooting in 15 seconds...")
 i = 0
 while not i == 15:
   i += 1
+  print(str(15 - i))
   time.sleep(1)
-os.system("shutdown -r --now")
+os.system("shutdown -r 0")
