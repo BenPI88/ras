@@ -1,6 +1,6 @@
 import os, time
 os.system("sudo apt install samba")
-config = open("/etc/samba/smb.conf")
+config = open("/etc/samba/smb.conf", "a")
 config.append("\n\n[RAS]\ncomment = RAS file share (github/benpi88)\n    path = /srv/samba/ras\n    browsable = yes\n    guest ok = yes\n    read only = no")
 config.close()
 os.system("sudo mkdir -p /srv/samba/ras && sudo chown nobody:nogroup /srv/samba/ras/ && sudo systemctl restart smbd.service nmbd.service")
